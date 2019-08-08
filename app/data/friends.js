@@ -36,3 +36,5 @@ var myFriends = [
     }
 
 ];
+
+module.exports = myFriends;
