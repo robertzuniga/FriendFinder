@@ -1,1 +1,105 @@
 <!-- Robert Zuniga home.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Friend Finder Home</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Friend Finder</h1>
+            <h3>The greatest resource in the galaxy for discovering a friend!</h3>
+            <!-- <hr>
+            <a href="/add"><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span>Take the
+                    Survey</button></a>
+            <a href="/api/characters"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> All
+                    Characters</button></a> -->
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a href="/survey"><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span>Take the
+                    Survey</button></a>
+
+                <!-- <div class="card">
+                    <div class="card-header">
+                        <h3><strong>Survey</strong></h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" role="form">
+
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="01-question">Q1: 1-5</label>
+                                <input type="text" class="form-control" id="q1">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="02-question">Q2: 1-5</label>
+                                <input type="text" class="form-control" id="q2">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="03-question">Q3: 1-5</label>
+                                <input type="text" class="form-control" id="q3">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="04-question">Q4: 1-5</label>
+                                <input type="text" class="form-control" id="q4">
+                            </div>
+
+                        </form>
+                        <br>
+                        <div class="text-right">
+                            <button type="submit" class="btn btn-primary btn-md" id="submit-btn"><span
+                                    class="fa fa-fire"></span> Find a friend</button>
+                        </div>
+                    </div>  end card body
+                 </div> end card  -->
+
+            </div> <!-- end col-12-->
+
+
+        </div>
+    </div>
+
+    <!-- <script type="text/javascript">
+        // Question: What does this code do?
+        $("#submit-btn").on("click", function (event) {
+            event.preventDefault();
+            var newFriend = {
+                "name": $("#name").val().trim(),
+                "photo": " ",
+                "scores": [
+                    parseInt($("#q1").val().trim()),
+                    parseInt($("#q2").val().trim()),
+                    parseInt($("#q3").val().trim()),
+                    parseInt($("#q4").val().trim())
+                ]
+            };
+            console.log(newFriend);
+            // Post
+            $.post("/api/friends", newFriend)
+                .then(function (data) {
+                    console.log("add.html", data);
+                    alert("Adding friend...");
+                });
+        });
+    </script> -->
+</body>
+
+</html>
