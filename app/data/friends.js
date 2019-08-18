@@ -1,7 +1,7 @@
 //Robert Zuniga - friends.js 
 //Data 
 
-var myFriends = [
+var friends = [
     {
         name: "Robert",
         photo: "https://robertzuniga.github.io/Bootstrap-Portfolio/assets/images/Robert-Zuniga.jpg",
@@ -23,4 +23,4 @@ var myFriends = [
 
 ];
 
-module.exports = myFriends;
+module.exports = friends;
