@@ -6,22 +6,12 @@ var friends = require("../data/friends.js");
 // Basic route that sends the user first to the AJAX Page
 module.exports = function (app) {
 
-    // Displays all characters
+    // Displays all friends
     app.get("/api/friends", function (req, res) {
        return res.json(friends);
     });
-
-    // {
-    //     name: "",
-    //     photo: "",
-    //     scores: [""   ]
-    // }
-
-
-
-
     
-    // Displays a single character, or returns false
+    // Displays a single friend, or returns false
     app.get("/api/friends/:friend", function (req, res) {
         var chosen = req.params.friend;
     
@@ -35,8 +25,7 @@ module.exports = function (app) {
         return res.json(false);
     });
     
-    
-    // Create New Characters - takes in JSON input
+    // Create New Friend - takes in JSON input
     app.post("/api/friends", function (req, res) {
         // req.body hosts is equal to the JSON post sent from the user
         // This works because of our body parsing middleware
@@ -53,7 +42,6 @@ module.exports = function (app) {
         res.json(newFriend);
     });
          
-
 }
 
 
