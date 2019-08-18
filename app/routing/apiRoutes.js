@@ -20,10 +20,6 @@ module.exports = function (app) {
 
 
 
-
-   
-    
- 
     
     // Displays a single character, or returns false
     app.get("/api/friends/:friend", function (req, res) {
@@ -48,17 +44,15 @@ module.exports = function (app) {
     
         // Using a RegEx Pattern to remove spaces from newFriend
         // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-        newFriend.routeName = newFriend.name.replace(/\s+/g, "").toLowerCase();
+        //newFriend.routeName = newFriend.name.replace(/\s+/g, "").toLowerCase();
     
         console.log(newFriend);
     
-        characters.push(newFriend);
+        friends.push(newFriend);
     
         res.json(newFriend);
     });
-
-
-
+         
 
 }
 
