@@ -4,7 +4,7 @@
 var friends = [
     {
         name: "Andrea",
-        photo: "https://robertzuniga.github.io/Bootstrap-Portfolio/assets/images/Robert-Zuniga.jpg",
+        photo: "../images/01-300.jpg",
         scores: [
             "1",
             "2",
@@ -13,7 +13,7 @@ var friends = [
     },
     {
         name: "Maya",
-        photo: "https://robertzuniga.github.io/Bootstrap-Portfolio/assets/images/technics-q-c-640-480-1.jpg",
+        photo: "../images/02-300.jpg",
         scores: [
             "4",
             "5",
@@ -22,8 +22,8 @@ var friends = [
     },
 
     {
-        name: "Angela",
-        photo: "https://robertzuniga.github.io/Bootstrap-Portfolio/assets/images/Robert-Zuniga.jpg",
+        name: "Samatha",
+        photo: "../images/03-300.jpg",
         scores: [
             "2",
             "3",
@@ -32,11 +32,47 @@ var friends = [
     },
     {
         name: "Veronica",
-        photo: "https://robertzuniga.github.io/Bootstrap-Portfolio/assets/images/technics-q-c-640-480-1.jpg",
+        photo: "../images/04-300.jpg",
         scores: [
             "5",
             "1",
             "2"
+        ]
+    },
+     {
+        name: "Barbara",
+        photo: "../images/05-300.jpg",
+        scores: [
+            "3",
+            "4",
+            "5"
+        ]
+    },
+    {
+        name: "Julia",
+        photo: "../images/06-300.jpg",
+        scores: [
+            "5",
+            "3",
+            "1"
+        ]
+    },
+     {
+        name: "Cynthia",
+        photo: "../images/07-300.jpg",
+        scores: [
+            "4",
+            "2",
+            "1"
+        ]
+    },
+    {
+        name: "Veronica",
+        photo: "../images/08-300.jpg",
+        scores: [
+            "5",
+            "1",
+            "3"
         ]
     }
 ];
