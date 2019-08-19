@@ -99,6 +99,8 @@
     <!-- ============================================================= -->
     <!--                            Modal                              -->
     <!-- ============================================================= -->
+    <!-- https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_ref_js_modal_js&stacked=h -->
+    <!-- https://getbootstrap.com/docs/4.0/components/modal/ -->
 
     <div id="results-modal" class="modal fade" role="dialog">
         <div class="modal-dialog">
@@ -106,13 +108,11 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title"><strong>Best Match</strong></h2>
+                    <h2 class="modal-title"><strong>Potential Friend</strong></h2>
                 </div>
                 <div class="modal-body">
                     <h2 id="match-name"></h2>
-                    <img id="match-img"
-                        src="https://raw.githubusercontent.com/robertzuniga/FriendFinder/master/images/Robert-Zuniga.jpg"
-                        alt="">
+                    <img id="match-img" src="" alt="">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -131,22 +131,29 @@
     <!-- ============================================================= -->
     <script type="text/javascript">
         // Chosen CSS https://stackoverflow.com/questions/48990746/jquery-chosen-max-selected-options
+        // https://wakar982.wordpress.com/2017/11/17/create-choosen-in-drop-down-list-with-jquery/
+        // https://harvesthq.github.io/chosen/options.html
         var config = {
             ".chosen-select": {},
-            ".chosen-select-deselect": { allow_single_deselect: true },
-            ".chosen-select-no-single": { disable_search_threshold: 3 },
-            ".chosen-select-no-results": { no_results_text: "Oops, nothing found!" },
-            ".chosen-select-width": { width: "95%" }
+            ".chosen-select-deselect": {
+                allow_single_deselect: true
+            },
+            ".chosen-select-no-single": {
+                disable_search_threshold: 10
+            },
+            ".chosen-select-no-results": {
+                no_results_text: "Oops, nothing found!"
+            },
+            ".chosen-select-width": {
+                width: "95%"
+            }
         };
-console.log("config ==> ",config)
-        // for (var selector in config) {
-        //     $(selector).chosen(config[selector]);
-        // }
+        // console.log("config ==> ", config)
         for (var selector in config) {
-
             $(selector).chosen(config[selector]);
-
+            // console.log("selector == > ", selector);
         }
+
         // Capture the form inputs
         $("#submit-btn").on("click", function (event) {
             event.preventDefault();
@@ -170,7 +177,7 @@ console.log("config ==> ",config)
             }
 
             // If all required fields are filled
-            if (validateForm()) {
+            if (validateForm() == true) {
                 // Create an object for the user"s data
                 var userData = {
                     name: $("#name").val(),
@@ -188,7 +195,30 @@ console.log("config ==> ",config)
                         // $("#q10").val()
                     ]
                 };
-console.log("userData==> ", userData)
+                console.log("userData==> ", userData);
+
+                $.get("/api/friends", function (dataFriends) {
+                    console.log("dataFriends ==> ", dataFriends);
+
+
+                    // console.log("config ==> ", config)
+                    for (var myFriends in dataFriends) {
+                        $(myFriends).chosen(dataFriends[myFriends]);
+                         console.log("myFriends == > ", myFriends);
+                    }
+
+                    dataFriends.forEach(function(scoresFriends){
+                    console.log(dataFriends.scores);
+                    });
+                    
+                    // for (var i = 0; i < dataFriends.length; i++) {
+                    //     // console.log("dataFriends[i] == > ", dataFriends[i].scores);
+                    //     for (var j=0; j < dataFriends[i].scores.length; j++){
+                    //         console.log("dataFriends.scores[j] == > ", dataFriends.scores.scores[j]);
+                    //     }
+                    // }
+                });
+
                 // AJAX post the data to the friends API.
                 $.post("/api/friends", userData, function (data) {
 

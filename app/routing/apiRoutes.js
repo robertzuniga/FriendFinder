@@ -17,8 +17,8 @@ module.exports = function (app) {
     
         console.log(chosen);
         for (var i = 0; i < friends.length; i++) {
-            if (chosen === friends[i].routeName) {
-                return res.json(characters[i]);
+            if (chosen === friends[i].name) {
+                return res.json(friends[i]);
             }
         }
     
@@ -35,7 +35,7 @@ module.exports = function (app) {
         // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
         //newFriend.routeName = newFriend.name.replace(/\s+/g, "").toLowerCase();
     
-        console.log(newFriend);
+        console.log("apiRoutes newFriend ==> ", newFriend);
     
         friends.push(newFriend);
     
