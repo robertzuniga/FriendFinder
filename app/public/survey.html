@@ -195,29 +195,40 @@
                         // $("#q10").val()
                     ]
                 };
-                console.log("userData==> ", userData);
-
+                console.log("userData==> ", userData); //object
+                var myMatch = 0;
                 $.get("/api/friends", function (dataFriends) {
-                    console.log("dataFriends ==> ", dataFriends);
+                    // console.log("dataFriends ==> ", dataFriends); //array object
+                    var matchFriendScore = [];
 
+                    for (var i = 0; i < dataFriends.length; i++) {
+                        //console.log("dataFriends[i] == > ", dataFriends[i].scores);
+                        //var totalFriends = dataFriends.length;
+                        matchFriendScore[i] = 0;
+                        // console.log("totalFriends ==> ", dataFriends.length);
+                        console.log("i ==> " + i + " Name ==> " + dataFriends[i].name);
 
-                    // console.log("config ==> ", config)
-                    for (var myFriends in dataFriends) {
-                        $(myFriends).chosen(dataFriends[myFriends]);
-                         console.log("myFriends == > ", myFriends);
+                        for (var j = 0; j < dataFriends[i].scores.length; j++) {
+                            // console.log("dataFriends.scores[i][j] == > ", i, j, dataFriends[i].scores[j]);
+                            // console.log(userData.scores[j]);
+                            
+                            // console.log("parseInt dataFriends[i].scores[j] ==> ",parseInt (dataFriends[i].scores[j]) );
+                            console.log("Name ==> " + userData.name + " score " + parseInt (userData.scores[j]) );
+
+                            matchFriendScore[i] += Math.abs(parseInt (dataFriends[i].scores[j]) - parseInt (userData.scores[j]));
+                            // console.log("matchFriendScore ==> ", matchFriendScore);
+                            // console.log("----------------------------------");
+                        }
+                        console.log("matchFriendScore ==> ", matchFriendScore[i]);
+                            console.log("----------------------------------");
                     }
-
-                    dataFriends.forEach(function(scoresFriends){
-                    console.log(dataFriends.scores);
-                    });
-                    
-                    // for (var i = 0; i < dataFriends.length; i++) {
-                    //     // console.log("dataFriends[i] == > ", dataFriends[i].scores);
-                    //     for (var j=0; j < dataFriends[i].scores.length; j++){
-                    //         console.log("dataFriends.scores[j] == > ", dataFriends.scores.scores[j]);
-                    //     }
-                    // }
+                    console.log("matchFriendScore ==> ", matchFriendScore);
+                  
+                    console.log(Math.min(...matchFriendScore));
+                    myMatch = parseInt(Math.min(...matchFriendScore));
+                    return myMatch;
                 });
+                    console.log("myMatch ==> ", myMatch);
 
                 // AJAX post the data to the friends API.
                 $.post("/api/friends", userData, function (data) {
