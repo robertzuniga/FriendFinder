@@ -7,71 +7,126 @@ var friends = [{
         scores: [
             "1",
             "2",
-            "3"
-        ]
+            "3",
+            "4",
+            "5",
+            "5",
+            "4",
+            "3",
+            "2",
+            "1"       ]
     },
     {
         name: "Maya",
         photo: "https://raw.githubusercontent.com/robertzuniga/FriendFinder/master/images/02-300.jpg",
         scores: [
             "4",
+            "4",
+            "3",
+            "4",
             "5",
+            "5",
+            "4",
+            "3",
+            "2",
             "1"
         ]
     },
 
     {
-        name: "Samatha",
+        name: "Selena",
         photo: "https://raw.githubusercontent.com/robertzuniga/FriendFinder/master/images/03-300.jpg",
         scores: [
+            "5",
+            "5",
+            "3",
+            "4",
+            "2",
+            "2",
+            "4",
+            "3",
+            "3",
+            "3"
+        ]
+    },
+    {
+        name: "Alejandra",
+        photo: "https://raw.githubusercontent.com/robertzuniga/FriendFinder/master/images/04-300.jpg",
+        scores: [
+            "1",
             "2",
             "3",
+            "4",
+            "5",
+            "5",
+            "5",
+            "5",
+            "5",
+            "1"
+        ]
+    },
+    {
+        name: "Lucia",
+        photo: "https://raw.githubusercontent.com/robertzuniga/FriendFinder/master/images/05-300.jpg",
+        scores: [
+            "3",
+            "3",
+            "3",
+            "3",
+            "3",
+            "3",
+            "3",
+            "3",
+            "3",
+            "3"
+        ]
+    },
+    {
+        name: "Adriana",
+        photo: "https://raw.githubusercontent.com/robertzuniga/FriendFinder/master/images/06-300.jpg",
+        scores: [
+            "4",
+            "4",
+            "4",
+            "4",
+            "4",
+            "4",
+            "4",
+            "3",
+            "4",
             "4"
         ]
     },
     {
-        name: "Veronica",
-        photo: "https://raw.githubusercontent.com/robertzuniga/FriendFinder/master/images/04-300.jpg",
+        name: "Luna",
+        photo: "https://raw.githubusercontent.com/robertzuniga/FriendFinder/master/images/07-300.jpg",
         scores: [
+            "2",
+            "2",
+            "2",
+            "2",
             "5",
-            "1",
+            "5",
+            "2",
+            "3",
+            "2",
             "2"
         ]
     },
     {
-        name: "Barbara",
-        photo: "https://raw.githubusercontent.com/robertzuniga/FriendFinder/master/images/05-300.jpg",
-        scores: [
-            "3",
-            "4",
-            "5"
-        ]
-    },
-    {
-        name: "Julia",
-        photo: "https://raw.githubusercontent.com/robertzuniga/FriendFinder/master/images/06-300.jpg",
-        scores: [
-            "5",
-            "3",
-            "1"
-        ]
-    },
-    {
-        name: "Cynthia",
-        photo: "https://raw.githubusercontent.com/robertzuniga/FriendFinder/master/images/07-300.jpg",
-        scores: [
-            "4",
-            "2",
-            "1"
-        ]
-    },
-    {
-        name: "Veronica",
+        name: "Elena",
         photo: "https://raw.githubusercontent.com/robertzuniga/FriendFinder/master/images/08-300.jpg",
         scores: [
             "5",
             "1",
-            "3"
+            "2",
+            "3",
+            "5",
+            "2",
+            "1",
+            "1",
+            "1",
+            "1"
         ]
     }
 ];
