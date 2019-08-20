@@ -277,7 +277,6 @@
                 $.get("/api/friends", function (dataFriends) {
                     // console.log("dataFriends ==> ", dataFriends); //array object
 
-
                     for (var i = 0; i < dataFriends.length; i++) {
                         //console.log("dataFriends[i] == > ", dataFriends[i].scores);
                         //var totalFriends = dataFriends.length;
@@ -290,8 +289,7 @@
                             // console.log(userData.scores[j]);
 
                             // console.log("parseInt dataFriends[i].scores[j] ==> ",parseInt (dataFriends[i].scores[j]) );
-                            console.log("Name ==> " + userData.name + " score " + parseInt(userData
-                                .scores[j]));
+                            console.log("Name ==> " + userData.name + " score " + parseInt(userData.scores[j]));
 
                             matchFriendScore[i] += Math.abs(parseInt(dataFriends[i].scores[j]) -
                                 parseInt(userData.scores[j]));
