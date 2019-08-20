@@ -11,7 +11,7 @@ This full-stack site takes in results from the users' surveys, then compares the
 The app will then display the name and picture of the user with the best overall match.
 
 Express is used to handle routing. 
-Heroku is used to deploy the app. ==> https://
+Heroku is used to deploy the app. ==> https://whispering-peak-65198.herokuapp.com/
 ----------------------------------------------------------------------------------------
 
 Friend Finder App Features
