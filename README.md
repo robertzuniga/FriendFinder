@@ -58,8 +58,8 @@ Each of these objects follows the format below.
 
 The user's most compatible friend uses the following as a guide:
 
-Convert each user's results into a simple array of numbers (ex: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]).
-Then compare the difference between current user's scores against those from other users, question by question. 
+Converts each user's results into a simple array of numbers (ex: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]).
+Then compares the difference between current user's scores against those from other users, question by question. 
 
 
 Example:
@@ -71,16 +71,15 @@ User 2: [3, 2, 6, 4, 5, 1, 2, 5, 4, 1]
 
 Total Difference: 2 + 1 + 2 = 5
 
-
+Includes:
 The use the absolute value of the differences(no negative solutions) 
-The app should calculate both 5-3 and 3-5 as 2, and so on.
+i.e The app calculates both 5-3 and 3-5 as 2, and so on.
 The closest match will be the user with the least amount of difference.
 
 
-Once  the current user's most compatible friend is determined, display the result as a modal pop-up.
+Once  the current user's most compatible friend is determined, the result is displayed as a modal pop-up.
 
-
-The modal should display both the name and picture of the closest match.
+The modal displays both the name and picture of the closest match.
 
 Folder/File structure
 
