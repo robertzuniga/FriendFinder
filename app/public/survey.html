@@ -45,7 +45,7 @@
                         <hr>
 
                         <h3><strong>Question 1</strong></h3>
-                        <h4>Your live the life of an artist.</h4>
+                        <h4>You live the life of an artist.</h4>
                         <select class="chosen-select" id="q1">
                             <option value=""></option>
                             <option value="1">1 (Strongly Disagree)</option>
@@ -68,8 +68,85 @@
 
 
                         <h3><strong>Question 3</strong></h3>
-                        <h4>You body is your temple.</h4>
+                        <h4>You body is your temple to care for and respect.</h4>
                         <select class="chosen-select" id="q3">
+                            <option value=""></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+
+                        <h3><strong>Question 4</strong></h3>
+                        <h4>Having passion and love are important to living a healthy life.</h4>
+                        <select class="chosen-select" id="q4">
+                            <option value=""></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+
+                        <h3><strong>Question 5</strong></h3>
+                        <h4>Dancing is the best way to express joy.</h4>
+                        <select class="chosen-select" id="q5">
+                            <option value=""></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+
+                        <h3><strong>Question 6</strong></h3>
+                        <h4>Laughing is the best way to express joy.</h4>
+                        <select class="chosen-select" id="q6">
+                            <option value=""></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+
+                        <h3><strong>Question 7</strong></h3>
+                        <h4>Hugs are important.</h4>
+                        <select class="chosen-select" id="q7">
+                            <option value=""></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+
+                        <h3><strong>Question 8</strong></h3>
+                        <h4>Being able to cry is important.</h4>
+                        <select class="chosen-select" id="q8">
+                            <option value=""></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+
+                        <h3><strong>Question 9</strong></h3>
+                        <h4>Dogs are great pets.</h4>
+                        <select class="chosen-select" id="q9">
+                            <option value=""></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+
+                        <h3><strong>Question 10</strong></h3>
+                        <h4>Cats are great pets.</h4>
+                        <select class="chosen-select" id="q10">
                             <option value=""></option>
                             <option value="1">1 (Strongly Disagree)</option>
                             <option value="2">2</option>
@@ -86,7 +163,6 @@
                 </div> <!-- end card-->
 
             </div> <!-- end col-12-->
-
 
         </div>
     </div>
@@ -186,21 +262,21 @@
                         $("#q1").val(),
                         $("#q2").val(),
                         $("#q3").val(),
-                        // $("#q4").val(),
-                        // $("#q5").val(),
-                        // $("#q6").val(),
-                        // $("#q7").val(),
-                        // $("#q8").val(),
-                        // $("#q9").val(),
-                        // $("#q10").val()
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val()
                     ]
                 };
                 console.log("userData==> ", userData); //object
-                var myMatch = 0; 
+                var myMatch = 0;
                 var matchFriendScore = [];
                 $.get("/api/friends", function (dataFriends) {
                     // console.log("dataFriends ==> ", dataFriends); //array object
-                   
+
 
                     for (var i = 0; i < dataFriends.length; i++) {
                         //console.log("dataFriends[i] == > ", dataFriends[i].scores);
@@ -212,40 +288,41 @@
                         for (var j = 0; j < dataFriends[i].scores.length; j++) {
                             // console.log("dataFriends.scores[i][j] == > ", i, j, dataFriends[i].scores[j]);
                             // console.log(userData.scores[j]);
-                            
-                            // console.log("parseInt dataFriends[i].scores[j] ==> ",parseInt (dataFriends[i].scores[j]) );
-                            console.log("Name ==> " + userData.name + " score " + parseInt (userData.scores[j]) );
 
-                            matchFriendScore[i] += Math.abs(parseInt (dataFriends[i].scores[j]) - parseInt (userData.scores[j]));
+                            // console.log("parseInt dataFriends[i].scores[j] ==> ",parseInt (dataFriends[i].scores[j]) );
+                            console.log("Name ==> " + userData.name + " score " + parseInt(userData
+                                .scores[j]));
+
+                            matchFriendScore[i] += Math.abs(parseInt(dataFriends[i].scores[j]) -
+                                parseInt(userData.scores[j]));
                             // console.log("matchFriendScore ==> ", matchFriendScore);
                             // console.log("----------------------------------");
                         }
                         console.log("matchFriendScore ==> ", matchFriendScore[i]);
-                            console.log("----------------------------------");
+                        console.log("----------------------------------");
                     }
                     console.log("matchFriendScore ==> ", matchFriendScore);
-                  
+
                     // console.log(Math.min(...matchFriendScore));
                     myMatch = Math.min(...matchFriendScore);
                     console.log("myMatch Value==> ", myMatch);
                     var index = matchFriendScore.indexOf(myMatch);
                     console.log("Index ==> ", index);
                     // console.log("My Match ==> ", dataFriends[index]);
-                // AJAX post the data to the friends API.
+                    // AJAX post the data to the friends API.
 
-                $.post("/api/friends", userData, function (data) {
+                    $.post("/api/friends", userData, function (data) {
 
-                    // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-                    $("#match-name").text(dataFriends[index].name);
-                    $("#match-img").attr("src", dataFriends[index].photo);
+                        // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+                        $("#match-name").text(dataFriends[index].name);
+                        $("#match-img").attr("src", dataFriends[index].photo);
 
-                    // Show the modal with the best match
-                    $("#results-modal").modal("toggle");
+                        // Show the modal with the best match
+                        $("#results-modal").modal("toggle");
+
+                    });
 
                 });
-
-                });
-                   
 
                 // // AJAX post the data to the friends API.
                 // $.post("/api/friends", userData, function (data) {
@@ -264,33 +341,6 @@
         });
     </script>
 
-
-    <!-- <script type="text/javascript">
-        // Question: What does this code do?
-        $("#submit-btn").on("click", function (event) {
-            event.preventDefault();
-            var newFriend = {
-                "name": $("#name").val().trim(),
-                "photo": "https://robertzuniga.github.io/Bootstrap-Portfolio/assets/images/Robert-Zuniga.jpg",
-                "scores": [
-                    $("#q1").val(),
-                    $("#q2").val(),
-                    $("#q3").val()
-                    // parseInt($("#q1").val().trim()),
-                    // parseInt($("#q2").val().trim()),
-                    // parseInt($("#q3").val().trim()),
-                    // parseInt($("#q4").val().trim())
-                ]
-            };
-            console.log(newFriend);
-            // Post
-            $.post("/api/friends", newFriend,
-                function (data) {
-                    console.log(data);
-                    // alert("Adding friend...");
-                });
-        });
-    </script> -->
 </body>
 
 </html>
